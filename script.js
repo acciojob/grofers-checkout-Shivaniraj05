@@ -7,24 +7,24 @@ const getSum = () => {
 //Add your code here
 
 const priceList =document.querySelectorAll('.price');
-let ans = 0;
+let totalPrice = 0;
 
 priceList.forEach(priceElement => {
-    ans += parseInt(priceElement.textContent);
+    totalPrice += parseInt(priceElement.textContent);
 });
 
 const totalRow =  document.createElement('tr');
-const totalCell = document.createElement('td');
+const ansElement = document.querySelector('#ans');
 
-totalCell.textContent = `Total: Rs ${ans}`;
-totalRow.appendChild(totalCell);
+ansElement.textContent = `Total: Rs ${totalPrice}`;
+totalRow.appendChild(ansElement);
 
 
 const table = document.querySelector('table');
 table.appendChild(totalRow);
-
-
   
 };
 
 getSumBtn.addEventListener("click", getSum);
+
+
